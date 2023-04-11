@@ -9,12 +9,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # exernal and web
+  webview_flutter: ^4.0.7
+  share_plus: ^6.3.2
   # Auth buttons
   auth_buttons: ^3.0.0
   font_awesome_flutter: ^10.4.0
   # State management packages
+  provider:
   flutter_bloc:
   equatable:
+  flutter_shimmer:
   # Firebase and auth packages
   firebase_auth: ^4.4.0
   firebase_core: ^2.9.0
