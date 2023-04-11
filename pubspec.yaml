@@ -9,12 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Auth buttons
+  auth_buttons: ^3.0.0
+  font_awesome_flutter: ^10.4.0
   # State management packages
   flutter_bloc:
   equatable:
   # Firebase and auth packages
-  firebase_auth:
-  firebase_core:
+  firebase_auth: ^4.4.0
+  firebase_core: ^2.9.0
   google_sign_in:
 
 dev_dependencies:
