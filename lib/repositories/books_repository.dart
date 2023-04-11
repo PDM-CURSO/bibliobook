@@ -4,6 +4,7 @@ import 'package:http/http.dart';
 import '../models/book_case/book_case.dart';
 
 class BooksRepository {
+  // TODO: investigue para que es un singleton
   static final BooksRepository _booksRepository = BooksRepository._internal();
   factory BooksRepository() {
     return _booksRepository;
@@ -23,10 +24,11 @@ class BooksRepository {
     try {
       final response = await get(_uri);
       if (response.statusCode == HttpStatus.ok) {
-        BookCase bookCase = BookCase.fromJson(response.body);
-        return bookCase;
-      } else
+        // TODO: implemente serializacion y sustituya la sig linea
         return BookCase(totalItems: 0);
+      } else {
+        return BookCase(totalItems: 0);
+      }
     } catch (e) {
       // arroje un error
       throw "Ha ocurrido un error: $e";

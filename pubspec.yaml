@@ -12,6 +12,7 @@ dependencies:
   # exernal and web
   webview_flutter: ^4.0.7
   share_plus: ^6.3.2
+  url_launcher: ^6.1.10
   # Auth buttons
   auth_buttons: ^3.0.0
   font_awesome_flutter: ^10.4.0

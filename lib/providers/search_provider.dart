@@ -8,35 +8,14 @@ import '../repositories/books_repository.dart';
 class SearchProvider with ChangeNotifier {
   BooksRepository _bookRepo = BooksRepository();
   List<Book> bookList = [];
-  bool isLoading = true;
+  bool isLoading = false;
   bool isError = false;
   Future<void> fetchBooks({String query = ""}) async {
     try {
-      _resetErrorAndLoading();
-      if (query == "") query = _getRandomTopic();
-      var bookCase = await _bookRepo.getAvailableBooks(query);
-      print("BookCase: ${bookCase}");
-      bookList = bookCase.items ?? [];
-      _resetErrorAndLoading();
-      notifyListeners();
+      // TODO: hacer request, como le hacemos?
     } catch (e) {
-      print("Hubo error en el request: ${e.toString()}");
-      bookList = [];
-      _onErrorResetErrorAndLoading();
-      notifyListeners();
+      // TODO: Error, que hacemos?
     }
-  }
-
-  void _resetErrorAndLoading() {
-    isLoading = false;
-    isError = false;
-    notifyListeners();
-  }
-
-  void _onErrorResetErrorAndLoading() {
-    isLoading = false;
-    isError = true;
-    notifyListeners();
   }
 
   String _getRandomTopic() {
