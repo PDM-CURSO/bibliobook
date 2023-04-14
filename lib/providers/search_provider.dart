@@ -12,9 +12,18 @@ class SearchProvider with ChangeNotifier {
   bool isError = false;
   Future<void> fetchBooks({String query = ""}) async {
     try {
-      // TODO: hacer request, como le hacemos?
+      isLoading = true;
+      notifyListeners();
+      // si no le pasamos datos que tome un tema random
+      if (query == "") query = _getRandomTopic();
+      var bookCase = await _bookRepo.getAvailableBooks(query);
+      bookList = bookCase.items ?? [];
+      isLoading = false;
+      notifyListeners();
     } catch (e) {
-      // TODO: Error, que hacemos?
+      bookList = [];
+      isLoading = false;
+      notifyListeners();
     }
   }
 
