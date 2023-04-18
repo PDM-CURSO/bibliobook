@@ -1,5 +1,6 @@
 import 'package:bibliobook/auth/bloc/auth_bloc.dart';
 import 'package:bibliobook/pages/content/books/libros.dart';
+import 'package:bibliobook/pages/create_notes/notes_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,6 +46,14 @@ class _HomePageState extends State<HomePage> {
           });
         },
         destinations: _bottomDestinations,
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: "Crear nueva nota",
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => NotesForm()));
+        },
       ),
     );
   }

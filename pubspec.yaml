@@ -24,7 +24,16 @@ dependencies:
   # Firebase and auth packages
   firebase_auth: ^4.4.0
   firebase_core: ^2.9.0
+  cloud_firestore: ^4.5.1
+  firebase_storage: ^11.1.0
   google_sign_in:
+  # storage and files
+  path_provider: ^2.0.14
+  image_picker: ^0.8.7+2
+  video_player: ^2.6.1
+  record: ^4.4.4
+  audio_waveforms: ^1.0.4
+
 
 dev_dependencies:
   flutter_test:
